@@ -1,0 +1,27 @@
+{
+  "name": "code-template-r",
+  "version": "0.1.0",
+  "description": "A React base code template to build Web Apps, Mobile Apps, and FaaS in a Mono Repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshvillahermosa/code-template-r.git"
+  },
+  "keywords": [
+    "react",
+    "fass",
+    "mono-repo",
+    "next",
+    "react-native",
+    "storybook"
+  ],
+  "author": "Joshua John Villahermosa <joshvillahermosa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshvillahermosa/code-template-r/issues"
+  },
+  "homepage": "https://github.com/joshvillahermosa/code-template-r#readme"
+}
