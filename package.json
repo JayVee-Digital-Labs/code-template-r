@@ -1,12 +1,14 @@
 {
   "name": "code-template-r",
-  "version": "0.1.0",
+  "version": "1.0.0-alpha.0",
   "description": "A React base code template to build Web Apps, Mobile Apps, and FaaS in a Mono Repo",
   "main": "index.js",
   "scripts": {
     "commit": "npx git-cz",
+    "create-package": "lerna create",
     "test": "lerna run test",
-    "version": "lerna version"
+    "version": "lerna version --conventional-commits",
+    "version:pre-release": "lerna version --conventional-commits --conventional-prerelease"
   },
   "repository": {
     "type": "git",
