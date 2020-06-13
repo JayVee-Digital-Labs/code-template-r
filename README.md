@@ -1,6 +1,6 @@
 # Code Template R
 
-_A name I made up on the spot_
+_A name I made up on the spot._
 A React base code template to build Web Apps, Mobile Apps, and FaaS in a Mono Repo. This is a WIP Project
 
 ## Description TODO
@@ -26,3 +26,8 @@ Commands are intended to run as `npm run <COMMAND>
 ## Architecture TODO
 
 ## Testing TODO
+
+## Resources
+
+- [Understanding Semantic Versioning](https://semver.org/)
+- [Understanding Change Logs](https://keepachangelog.com/en/1.0.0/)
