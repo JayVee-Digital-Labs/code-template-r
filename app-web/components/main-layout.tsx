@@ -5,7 +5,7 @@ interface LayoutProps {
 }
 
 export default class MainLayout extends Component<LayoutProps> {
-  render() {
+  render(): JSX.Element {
     const { children } = this.props
     return <main>{children}</main>
   }

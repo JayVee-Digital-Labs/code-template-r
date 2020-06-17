@@ -13,13 +13,13 @@ export interface Props {
 }
 
 export default class Index extends Component<Props> {
-  static async getInitialProps() {
+  static async getInitialProps(): Promise<Props> {
     const pageConfig = CONFIG.pages.index
     const version = PACKAGE_JSON.version
     return { pageConfig, version }
   }
 
-  renderNavigationLinks({ link, text }: NavigationLink) {
+  renderNavigationLinks({ link, text }: NavigationLink): JSX.Element {
     // TODO: Implement a Link Component when Implementing StoryBook
     return (
       <Link href={link} key={text + link}>
@@ -28,7 +28,7 @@ export default class Index extends Component<Props> {
     )
   }
 
-  render() {
+  render(): JSX.Element {
     const { pageConfig, version } = this.props
 
     return (

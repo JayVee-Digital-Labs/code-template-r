@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { render } from '@testing-library/react'
 import MainLayout from '../../components/main-layout'
 
-class SampleComponent extends Component<any> {
+class SampleComponent extends Component {
   render() {
     return <div>Sample Component</div>
   }

@@ -8,17 +8,28 @@ import { PageConfig, NavigationLink } from '../../types'
  * TODO: Make this into a pure function
  * https://github.com/joshvillahermosa/code-template-r/issues/20
  */
+interface Props {
+  children: JSX.Element
+}
 const clickSpy = jest.fn()
 jest.mock('next/link', () => {
-  return ({ children }) => {
+  const MockRender = ({ children }: Props): JSX.Element => {
     return <span onClick={clickSpy}>{children}</span>
   }
+
+  return MockRender
 })
+
+export type TestNavigation = (NavigationLink) => void
 
 export interface TestNavigationOptions {
   renderFunction: ({ pageConfig: PageConfig }) => { findByText; debug? }
   pageConfig: PageConfig
-  click: Function
+  click: (element: Document | Node | Element | Window) => boolean
+}
+
+export interface TestFunctions {
+  testNavigation: TestNavigation
 }
 
 /**
@@ -28,11 +39,11 @@ export const setUpTestNavigation = ({
   renderFunction,
   pageConfig,
   click,
-}: TestNavigationOptions) => ({
+}: TestNavigationOptions): TestFunctions => ({
   /**
    * This will test each link
    */
-  testNavigation: (navigationLink: NavigationLink) => {
+  testNavigation: (navigationLink: NavigationLink): void => {
     it(`should allow the user to go to "${navigationLink.text}" specified in the pageConfig`, async () => {
       const { findByText } = renderFunction({ pageConfig })
       const text = await findByText(navigationLink.text)
