@@ -1,6 +1,6 @@
 {
   "name": "code-template-r",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "A React base code template to build Web Apps, Mobile Apps, and FaaS in a Mono Repo",
   "main": "index.js",
   "scripts": {
