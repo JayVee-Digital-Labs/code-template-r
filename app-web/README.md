@@ -11,7 +11,8 @@ Commands are intended to run as `npm run <COMMAND>`. See [NextJs CLI](https://ne
 | `build`           | TThis will start [NextJs Build](https://nextjs.org/docs/api-reference/cli#build) .                                                                                                                    |
 | `dev`             | This will start [NextJs Development mode](https://nextjs.org/docs/api-reference/cli#development) .                                                                                                    |
 | `start`           | This will start [NextJs Production Mode](https://nextjs.org/docs/api-reference/cli#production) .                                                                                                      |
-| `test`            | This will run `test:unit`, see below .                                                                                                                                                                |
+| `lint`            | This will run linting on all src code. See [ESLint](https://github.com/typescript-eslint/typescript-eslint) and `.estlintrc.js` for more details                                                      |
+| `test`            | This will run `lint` and `test:unit` .                                                                                                                                                                |
 | `test:unit`       | Runs Unit Tests using [Jest](https://jestjs.io/) and [React Test Library](https://testing-library.com/docs/react-testing-library/intro). This will also generate a coverage report under `./coverage` |
 | `test:unit:watch` | Runs `test:unit` in watch mode                                                                                                                                                                        |
 
