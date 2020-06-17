@@ -4,12 +4,12 @@
   "description": "A React base code template to build Web Apps, Mobile Apps, and FaaS in a Mono Repo",
   "main": "index.js",
   "scripts": {
-    "dev": "lerna run dev --stream",
     "commit": "npx git-cz",
     "create-package": "lerna create",
+    "dev": "lerna run dev --stream",
     "start": "npm run dev",
     "test": "lerna run test --since",
-    "version": "lerna version --conventional-commits",
+    "version:normal": "lerna version --conventional-commits",
     "version:pre-release": "lerna version --conventional-commits --conventional-prerelease"
   },
   "repository": {
