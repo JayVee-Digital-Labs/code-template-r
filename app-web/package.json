@@ -1,0 +1,42 @@
+{
+  "name": "app-web",
+  "version": "1.0.0-alpha.0",
+  "description": "A NextJs Repository",
+  "keywords": [
+    "react",
+    "nextjs"
+  ],
+  "author": "Joshua John Villahermosa <jvillahermosa@gmail.com>",
+  "homepage": "https://github.com/joshvillahermosa/code-template-r/tree/master/app-web#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshvillahermosa/code-template-r.git"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start",
+    "test": "npm run test:unit",
+    "test:unit": "jest --coverage",
+    "test:unit:watch": "jest --watch"
+  },
+  "bugs": {
+    "url": "https://github.com/joshvillahermosa/code-template-r/issues"
+  },
+  "dependencies": {
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.36",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/react": "^10.2.1",
+    "@types/jest": "^26.0.0",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0"
+  }
+}

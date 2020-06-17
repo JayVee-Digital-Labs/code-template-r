@@ -1,0 +1,25 @@
+{
+  "README": "This is a temporary config space until we set up a service that will retrieve this for us. See https://github.com/joshvillahermosa/code-template-r/issues/17. The purpose of this config is to provide a place for simple text, links, images, etc.",
+  "pages": {
+    "index": {
+      "title": "Project R Template",
+      "header": "Hello World!",
+      "navigation": [
+        {
+          "text": "Page One",
+          "link": "page-one"
+        }
+      ]
+    },
+    "page-one": {
+      "title": "Project R Template",
+      "header": "Hello World From Page 2!",
+      "navigation": [
+        {
+          "text": "Home",
+          "link": "/"
+        }
+      ]
+    }
+  }
+}

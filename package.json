@@ -4,9 +4,11 @@
   "description": "A React base code template to build Web Apps, Mobile Apps, and FaaS in a Mono Repo",
   "main": "index.js",
   "scripts": {
+    "dev": "lerna run dev --stream",
     "commit": "npx git-cz",
     "create-package": "lerna create",
-    "test": "lerna run test",
+    "start": "npm run dev",
+    "test": "lerna run test --since",
     "version": "lerna version --conventional-commits",
     "version:pre-release": "lerna version --conventional-commits --conventional-prerelease"
   },
@@ -43,7 +45,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "npm test"
     }
   }
 }
