@@ -11,7 +11,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx}\"",
     "start": "npm run dev",
-    "test": "lerna run test --since",
+    "test": "npm run format:check && lerna run test --since",
     "version:normal": "lerna version --conventional-commits",
     "version:pre-release": "lerna version --conventional-commits --conventional-prerelease"
   },
