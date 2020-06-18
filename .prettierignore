@@ -1,2 +1,6 @@
-# Next JS Files
+# Dist files
+**/dist/**
 **/.next/**
+
+## Coverage Files
+**/coverage/**

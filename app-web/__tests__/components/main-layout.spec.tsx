@@ -13,7 +13,7 @@ describe('Main Layout', () => {
     const { container } = render(
       <MainLayout>
         <SampleComponent />
-      </MainLayout>,
+      </MainLayout>
     )
     expect(container).toMatchSnapshot()
   })

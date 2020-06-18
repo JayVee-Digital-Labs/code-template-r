@@ -43,7 +43,9 @@ export default class Index extends Component<Props> {
 
         {/* TODO: Implement a Nav UI Component when Implementing StoryBook */}
         <nav>
-          {pageConfig.navigation ? pageConfig.navigation.map(this.renderNavigationLinks) : null}
+          {pageConfig.navigation
+            ? pageConfig.navigation.map(this.renderNavigationLinks)
+            : null}
         </nav>
       </MainLayout>
     )
