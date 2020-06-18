@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.3](https://github.com/joshvillahermosa/code-template-r/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2020-06-18)
+
+
+### Features
+
+* **formatting:** add prettier to the code base ([2cbd33f](https://github.com/joshvillahermosa/code-template-r/commit/2cbd33f0f7ea578d872843ed9b9233d2fe9908e1)), closes [closes#15](https://github.com/closes/issues/15)
+
+
+
+
+
 # [1.0.0-alpha.2](https://github.com/joshvillahermosa/code-template-r/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2020-06-17)
 
 
