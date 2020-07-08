@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Scrap Folder for Reference
+.scrap
+
+# Cypress Related files
+**/cypress/integration/examples/
+**/__image_snapshots__/**/*.actual.png
+**/__image_snapshots__/**/*.diff.png
+**/cypress/**/*.mp4

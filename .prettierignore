@@ -1,5 +1,6 @@
 # Dist files
 **/dist/**
+**/lib/**
 **/.next/**
 
 ## Coverage Files
