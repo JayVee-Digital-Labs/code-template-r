@@ -1,6 +1,6 @@
 {
   "name": "app-ui",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.4",
   "description": "Shared UI components for web apps and mobile apps using React",
   "keywords": [
     "react",
