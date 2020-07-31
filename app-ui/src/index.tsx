@@ -1,3 +1,4 @@
-import { AppHeader } from './shared'
+import { AppHeader, AppHero, AppMain } from './shared'
+import { createNextLink, AppWebLink } from './web'
 
-export { AppHeader }
+export { AppHeader, AppHero, AppMain, AppWebLink, createNextLink }

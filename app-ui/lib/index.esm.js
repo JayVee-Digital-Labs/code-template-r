@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native-web';
+import { Text, View } from 'react-native-web';
 import tailwind from 'tailwind-rn';
 
 class AppHeader extends Component {
-    constructor() {
-        super(...arguments);
-        this.DEFAULT_HEADER = '1';
-    }
     getHeaderStyle(level) {
         const map = {
             '1': '6',
@@ -19,12 +15,60 @@ class AppHeader extends Component {
         return map[level];
     }
     render() {
+        const DEFAULT_HEADER = '1';
         const { children, level } = this.props;
-        const levelMap = level ? this.getHeaderStyle(level) : this.DEFAULT_HEADER;
-        return (React.createElement(Text, { accessibilityRole: "header", "aria-level": level, 
+        const levelMap = level ? this.getHeaderStyle(level) : DEFAULT_HEADER;
+        const ACCESSIBILITY_ROLE = 'header';
+        const STYLE = `text-${levelMap}xl`;
+        return (React.createElement(Text, { accessibilityRole: ACCESSIBILITY_ROLE, "aria-level": level, 
             // Temp Style
-            style: tailwind(`text-${levelMap}xl`) }, children));
+            style: tailwind(STYLE) }, children));
     }
 }
 
-export { AppHeader };
+class AppHero extends Component {
+    render() {
+        const { children, testId } = this.props;
+        const STYLE = 'flex bg-gray-200 py-24 justify-center text-center';
+        return (React.createElement(View, { testID: testId, style: tailwind(STYLE) }, children));
+    }
+}
+
+class AppMain extends Component {
+    render() {
+        const { children, testId } = this.props;
+        const STYLE = 'mx-8';
+        return (React.createElement(View, { testID: testId, style: tailwind(STYLE) }, children));
+    }
+}
+
+const createNextLink = (
+// TODO: See https://github.com/joshvillahermosa/code-template-r/issues/37
+NextLinkComponent) => {
+    return class AppNextLink extends Component {
+        render() {
+            const DEFAULT_STYLE_OPTIONS = {
+                color: 'green',
+            };
+            const { text, href, key, styleOptions } = this.props;
+            const style = styleOptions
+                ? Object.assign({}, DEFAULT_STYLE_OPTIONS, styleOptions)
+                : DEFAULT_STYLE_OPTIONS;
+            return (React.createElement(NextLinkComponent, { href: href, key: key },
+                React.createElement("a", { style: { ...style } }, text)));
+        }
+    };
+};
+
+class AppWebLink extends Component {
+    render() {
+        const DEFAULT_COLOR = 'green';
+        const { text, href, color: colorProp } = this.props;
+        const color = colorProp ? colorProp : DEFAULT_COLOR;
+        const STYLE = `hover:underline text-${color}-700`;
+        const TARGET = '_blank';
+        return (React.createElement("a", { href: href, target: TARGET, style: tailwind(STYLE) }, text));
+    }
+}
+
+export { AppHeader, AppHero, AppMain, AppWebLink, createNextLink };

@@ -1,0 +1,15 @@
+exports[`Creating a Web UI Next JS Link > should match component html snapshot #0`] = `
+<a style="color: green;">text</a>
+`;
+
+exports[`Creating a Web UI Next JS Link > should take in a optional key #0`] = `
+<a style="color: green;">text</a>
+`;
+
+exports[`Creating a Web UI Next JS Link > should match component html snapshot to match nextJs attributes #0`] = `
+<a style="color: green;">text</a>
+`;
+
+exports[`Creating a Web UI Next JS Link > should take in a optional key to match NextJs Attributes #0`] = `
+<a style="color: green;">text</a>
+`;

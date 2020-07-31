@@ -111,3 +111,6 @@ dist
 **/__image_snapshots__/**/*.actual.png
 **/__image_snapshots__/**/*.diff.png
 **/cypress/**/*.mp4
+
+## VS Code Workspaces. For now we will keep this ignored until we find as way to use relative paths for Terminal Manager
+*.code-workspace

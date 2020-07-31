@@ -3,7 +3,7 @@
   "pages": {
     "index": {
       "title": "Project R Template",
-      "header": "Hello World!",
+      "header": "Code Template R",
       "navigation": [
         {
           "text": "Page One",
@@ -13,7 +13,7 @@
     },
     "page-one": {
       "title": "Project R Template",
-      "header": "Hello World From Page 2!",
+      "header": "A React Based Starter Template",
       "navigation": [
         {
           "text": "Home",
