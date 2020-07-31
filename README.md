@@ -1,13 +1,52 @@
 # Code Template R
 
 _A name I made up on the spot._
-A React base code template to build Web Apps, Mobile Apps, and FaaS in a Mono Repo. This is a WIP Project
+A Frankenstein React base code template to build Web Apps, Mobile Apps, and FaaS in a Mono Repo. This is a WIP Project
 
-## Description TODO
+## Philosophy (TODO: WIP, flesh out philosophies in further details, including the _whys_, elaborate bullet points)
 
-## Philosophy TODO
+This repository is meant to scaffold applications quickly for web, mobile, and micro services. The initial repository is **not intended to be long term projects, but push applications out to market faster while considering business optimizations**.
+Given if the scalability and business rules meet, then obviously this can be stayed in as a mono repo. If not, then the design (TODO) of this repository should allow you to break out of a mono repo and into individual repositories. What I try and hope to do is
+add specific and opinionated engineering practices to this repository.
 
-## Quick Start TODO
+### Features
+
+Features should be fully discussed (Business requirements and Architecture Designed) and written into the tracking system. This repository heavily uses Github Issues and Projects to leverage that.
+
+### Bug Fixing
+
+Issues should have OS, Browser, Steps to reproduce and expected and actual. PR for bugfix MUST have tests.
+
+### Versioning
+
+Follow SemVar
+
+### Development
+
+- Leverage Automation to do the smaller tasks such as code style, formatting, etc.
+- Each PR should have Unit and Integration Tests
+- Treat each PR as a forum. Ask questions if you are not sure. Be Verbose.
+- Utilize Image Snapshot. They'll help the reviewer understand new changes.
+
+## DevOps
+
+TODO: Add
+
+## Recommended Setup
+
+This repository is best suited for [VS Code](https://code.visualstudio.com/) and the following extensions:
+
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for automatic formatting
+- [Terminal Manager](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals) to launch apps with ease. **Note when doing this, you will need to set up your local workspace settings to point to the right directory for terminal manager.** See below
+- [Editor Config](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for specific editor formatting and instructions.
+
+## Starting
+
+1. Install [nvm](https://github.com/nvm-sh/nvm).
+1. Switch to the proper node version using `nvm use` (Install the proper node version if it is missing).
+1. In the root folder run `npm i` to install root packages.
+1. After run `npm run install-packages` for [lerna](https://github.com/lerna/lerna/tree/master/commands/bootstrap#readme) to install sub packages and link local packages together.
+1. TODO: Write a command to run all services with `npm run start` Note that this will be a memory intensive process. OR you can go to the package and run `npm start` to run them individually.
 
 ## Quick Contributing Guide TODO
 
@@ -30,15 +69,39 @@ Commands are intended to run as `npm run <COMMAND>
 
 ## Architecture TODO
 
-## Testing TODO
+## Testing
+
+Testing will follow the philosophy:
+
+1. **Treat every test as a black box test**. The test should not care for implementation details and private methods/properties. The test should only care about input and output to a extent. Trying to care for them will create test bloat and unnecessary hacks.
+1. **No Shallow Rendering/Little Mocking Dependencies**. Referencing Kent C. Dodds article on [shallow rendering](https://kentcdodds.com/blog/why-i-never-use-shallow-rendering), we should not shallow render components or mock dependencies (internal to this package)(Exceptions are XHR Calls and window methods). Each consuming components/utility is part of the component, therefore to ensure that the contract between parent component and child component is honored, we do not mock/shallow render components. This is made sure that the test written in a way the user would use it.
+1. **Write Tests on how a user would use it.**. Avoiding writing specs as `describe('button', () => { it('#click', () => { ...Test }) })`. We should write specs on how the user would use it. Such as `it('should turn green when clicked')`
+1. **Include image snapshot when ever possible**. Testing for text asserts can only catch so much. Image snapshots can test specific CSS rendering and typically avoids a lot of overhead. This should be similar if a manual QA Tester comes in and checks for bugs. There are exceptions to this such as dynamic data where the fallback should be text assertions.
+1. **Each bug fix must accompany a updated spec file**. This is soley the purpose of regression testing to make sure no bugs re-appear/
 
 ## Recommended VS Code extensions
 
 Please download the following VS Code extensions for a better development experience.
 
--   [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). This allows you to leverage prettier in VS Code and automatically format on save
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). This allows you to leverage prettier in VS Code and automatically format on save
+
+## Terminal Manager configuration
+
+If you decide to user Terminal Manager, you will need to add this to your VS Code workspace settings:
+
+```json
+{
+  ...
+  "settings": {
+    "terminals.configPath": "/absolute/path/code-template-r/terminals.json"
+  }
+}
+
+```
+
+For some reason, this extension does not like relative paths.
 
 ## Resources
 
--   [Understanding Semantic Versioning](https://semver.org/)
--   [Understanding Change Logs](https://keepachangelog.com/en/1.0.0/)
+- [Understanding Semantic Versioning](https://semver.org/)
+- [Understanding Change Logs](https://keepachangelog.com/en/1.0.0/)

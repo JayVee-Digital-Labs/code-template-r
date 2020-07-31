@@ -1,2 +1,3 @@
 import { AppHeader } from './elements';
-export { AppHeader };
+import { AppHero, AppMain } from './layouts';
+export { AppHeader, AppHero, AppMain };

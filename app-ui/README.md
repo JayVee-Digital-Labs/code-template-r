@@ -85,38 +85,32 @@ Inside each folder, you should see the following files:
 
 ## Testing
 
-Testing will follow the philosophy:
-
-1. **Treat every test as a black box test**. The test should not care for implementation details and private methods/properties. The test should only care about input and output to a extent. Trying to care for them will create test bloat and unnecessary hacks.
-1. **No Shallow Rendering/Little Mocking Dependencies**. Referencing Kent C. Dodds article on [shallow rendering](https://kentcdodds.com/blog/why-i-never-use-shallow-rendering), we should not shallow render components or mock dependencies (internal to this package)(Exceptions are XHR Calls and window methods). Each consuming components/utility is part of the component, therefore to ensure that the contract between parent component and child component is honored, we do not mock/shallow render components. This is made sure that the test written in a way the user would use it.
-1. **Write Tests on how a user would use it.**. Avoiding writing specs as `describe('button', () => { it('#click', () => { ...Test }) })`. We should write specs on how the user would use it. Such as `it('should turn green when clicked')`
-1. **Include image snapshot when ever possible**. Testing for text asserts can only catch so much. Image snapshots can test specific CSS rendering and typically avoids a lot of overhead. This should be similar if a manual QA Tester comes in and checks for bugs. There are exceptions to this such as dynamic data where the fallback should be text assertions.
-1. **Each bug fix must accompany a updated spec file**. This is soley the purpose of regression testing to make sure no bugs re-appear/
-
-Given that, to write a test, be sure to include a `index.spec.tsx` file with each new component and bug fix. When updating snapshots, run `npm run test:update-snapshots`.
+Follows the same philosophy as [Testing](../README.md#Testing) in the root README.md File. Given that, to write a test, be sure to include a `index.spec.tsx` file with each new component and bug fix. When updating snapshots, run `npm run test:update-snapshots`.
 
 ## Consuming
 
-TODO: Should be addressed with [#30](https://github.com/joshvillahermosa/code-template-r/issues/30)
+To consume this package inside the mono repo, inside the consuming package, run [`lerna add app-ui`](https://github.com/lerna/lerna/tree/master/commands/add). To test features in the consuming package while, you can run `build:watch` in `app-ui` to hot reload changes.
 
 ## Commands
 
-| Command                | Description                                               |
-| ---------------------- | --------------------------------------------------------- |
-| `build`                | Builds the design system for distribution and consuming   |
-| `build:storybook`      | Builds Storybook as a static app                          |
-| `lint`                 | This will lint the source code                            |
-| `test`                 | This will run cypress react unit tests and snapshot tests |
-| `test:update-snapshot` | This will update cypress image snapshots                  |
-| `test:watch`           | This will launch Cypress to run test for any changes made |
-| `start`                | This runs `npm run storybook`                             |
-| `storybook`            | This will run the storybook server for Development        |
+| Command                | Description                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------- |
+| `build`                | Builds the design system for distribution and consuming                             |
+| `build:watch`          | Runs `build` and rebuilds on file changes. Useful to test how apps consume the lib. |
+| `build:storybook`      | Builds Storybook as a static app                                                    |
+| `lint`                 | This will lint the source code                                                      |
+| `test`                 | This will run cypress react unit tests and snapshot tests                           |
+| `test:update-snapshot` | This will update cypress image snapshots                                            |
+| `test:watch`           | This will launch Cypress to run test for any changes made                           |
+| `start`                | This runs `npm run storybook`                                                       |
+| `storybook`            | This will run the storybook server for Development                                  |
 
 ## Known issues
 
 - [Removing React Scripts](https://github.com/joshvillahermosa/code-template-r/issues/31). This was built for early scaffolding. This may be no longer needed.
 - [Lerna Linking causes Dist Issues](https://github.com/joshvillahermosa/code-template-r/issues/32)
 - [Random Test Failure with LOC](https://github.com/joshvillahermosa/code-template-r/issues/33)
+- Unifying `AppWebLink` to `AppLink` to be used universally will not work due to some typings error (TS(2769))
 
 ## Referencing Articles
 

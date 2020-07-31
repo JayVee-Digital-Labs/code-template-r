@@ -1,0 +1,39 @@
+{
+  "autorun": false,
+  "autokill": true,
+  "terminals": [
+    {
+      "name": "App MonoRepo Root",
+      "description": "App Web Terminal Commands",
+      "icon": "code",
+      "cwd": "./"
+    },
+    {
+      "name": "App Web Terminal",
+      "description": "App Web Terminal Commands",
+      "icon": "code",
+      "cwd": "./app-web"
+    },
+    {
+      "name": "App Web Serve",
+      "description": "App Web Dev Server",
+      "icon": "code",
+      "cwd": "./app-web",
+      "command": "npm start"
+    },
+
+    {
+      "name": "App UI Terminal",
+      "description": "App UI Terminal Commands",
+      "icon": "code",
+      "cwd": "./app-ui"
+    },
+    {
+      "name": "App UI Serve",
+      "description": "App UI Storybook Server",
+      "icon": "code",
+      "cwd": "./app-ui",
+      "command": "npm start"
+    }
+  ]
+}

@@ -4,15 +4,11 @@ import tailwind from 'tailwind-rn'
 
 export type HeaderLevels = '1' | '2' | '3' | '4' | '5' | '6'
 export interface AppHeaderProps {
-  children: ReactNode
-
   // Undefined will result in a h1
   level?: HeaderLevels
 }
 
 export default class AppHeader extends Component<AppHeaderProps> {
-  private DEFAULT_HEADER = '1'
-
   private getHeaderStyle(level: HeaderLevels): string {
     const map = {
       '1': '6',
@@ -27,14 +23,19 @@ export default class AppHeader extends Component<AppHeaderProps> {
   }
 
   render(): JSX.Element {
+    const DEFAULT_HEADER = '1'
     const { children, level } = this.props
-    const levelMap = level ? this.getHeaderStyle(level) : this.DEFAULT_HEADER
+    const levelMap = level ? this.getHeaderStyle(level) : DEFAULT_HEADER
+
+    const ACCESSIBILITY_ROLE = 'header'
+    const STYLE = `text-${levelMap}xl`
+
     return (
       <Text
-        accessibilityRole="header"
+        accessibilityRole={ACCESSIBILITY_ROLE}
         aria-level={level}
         // Temp Style
-        style={tailwind(`text-${levelMap}xl`)}
+        style={tailwind(STYLE)}
       >
         {children}
       </Text>

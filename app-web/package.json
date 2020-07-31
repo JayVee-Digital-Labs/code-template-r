@@ -16,8 +16,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "start": "next start",
+    "start": "npm run dev",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "serve": "next start",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "jest --coverage",
     "test:unit:watch": "jest --watch"
@@ -28,9 +29,10 @@
   "dependencies": {
     "@types/node": "^14.0.13",
     "@types/react": "^16.9.36",
+    "app-ui": "^1.0.0-alpha.4",
     "next": "^9.4.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "../node_modules/react",
+    "react-dom": "../node_modules/react-dom",
     "typescript": "^3.9.5"
   },
   "devDependencies": {

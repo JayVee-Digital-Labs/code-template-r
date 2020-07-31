@@ -3,11 +3,15 @@
   "version": "1.0.0-alpha.4",
   "description": "A React base code template to build Web Apps, Mobile Apps, and FaaS in a Mono Repo",
   "main": "index.js",
+  "notes": [
+    "React and React Dom is loaded here top level so react hooks will not collide. TODO: Find GH Issue rel to mono repos"
+  ],
   "scripts": {
     "commit": "npx git-cz",
     "create-package": "lerna create",
     "dev": "lerna run dev --stream",
-    "lint": "lerna run lint --steam",
+    "install-packages": "lerna bootstrap --ignore-prepublish",
+    "lint": "lerna run lint --stream",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx}\"",
     "start": "npm run dev",
@@ -53,5 +57,9 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-push": "npm test"
     }
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
